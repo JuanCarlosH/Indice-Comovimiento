@@ -1,0 +1,154 @@
+% ------------------------------------------------------------------------
+% AMS-LaTeX definitions:     Thesis ++++ Alex, September 1994 ************
+% ------------------------------------------------------------------------
+% Ph.D. Thesis Defended on November 25, 1994
+% ------------------------------------------------------------------------
+\documentclass[11pt]{report}
+\usepackage[activeacute,spanish]{babel} % idioma español permite acentos y ñ
+\usepackage[centertags]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{newlfont}
+\usepackage{xthesis} %DAL Thesis Style
+\usepackage{xtocinc} %Include Table of Contents as the first entry in TOC
+%                     Faculty of Grad Studies insists on this!?
+%\usepackage[active]{srcltx}  %SRC Specials for DVI search
+\usepackage{graphicx}
+\usepackage[body={6.0in, 8.5in},left=1.0in,right=1.0in]{geometry} % margenes del documento
+%\usepackage[latin1]{inputenc}     % Caracteres con acentos.
+
+
+% Fuzz -------------------------------------------------------------------
+\hfuzz2pt % Don't bother to report over-full boxes if over-edge is < 2pt
+% Line spacing -----------------------------------------------------------
+\newlength{\defbaselineskip}
+\setlength{\defbaselineskip}{\baselineskip}
+\newcommand{\setlinespacing}[1]%
+           {\setlength{\baselineskip}{#1 \defbaselineskip}}
+\newcommand{\doublespacing}{\setlength{\baselineskip}%
+                           {1.0 \defbaselineskip}}
+\newcommand{\singlespacing}{\setlength{\baselineskip}{\defbaselineskip}}
+% MATH -------------------------------------------------------------------
+\newcommand{\A}{{\cal A}}
+\newcommand{\h}{{\cal H}}
+\newcommand{\s}{{\cal S}}
+\newcommand{\W}{{\cal W}}
+\newcommand{\BH}{\mathbf B(\cal H)}
+\newcommand{\KH}{\cal  K(\cal H)}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\Complex}{\mathbb C}
+\newcommand{\Field}{\mathbb F}
+\newcommand{\RPlus}{[0,\infty)}
+%
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\essnorm}[1]{\norm{#1}_{\text{\rm\normalshape ess}}}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\seq}[1]{\left<#1\right>}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\RE}{\operatorname{Re}}
+\newcommand{\IM}{\operatorname{Im}}
+\newcommand{\Poly}{{\cal{P}}(E)}
+\newcommand{\EssD}{{\cal{D}}}
+% THEOREMS ---------------------------------------------------------------
+\theoremstyle{plain}
+\newtheorem{thm}{Teorema}[section]
+\newtheorem{cor}[thm]{Corolario}
+\newtheorem{lem}[thm]{Lema}
+\newtheorem{prop}[thm]{Proposicion}
+%
+\theoremstyle{definition}
+\newtheorem{defn}{Definici\'on}[section]
+%
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}[section]
+%
+\numberwithin{equation}{section}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+%%% ----------------------------------------------------------------------
+\setlength{\tclineskip}{1.0\baselineskip}
+%%% ----------------------------------------------------------------------
+%\newcommand{\mathbb{E}}{{\E}}
+\begin{document}
+
+%\nobib
+%\draft
+%\nofront
+
+%\permissionfalse
+
+\dedicate{Este trabajo esta dedicado a mis Padres Juan Carlos Herrera y Sara Elizabeth \'Ordenes por su ayuda en sabidur\'ia e inteligencia  durante mi p\'eriodo de estudio. Por iluminarme en los momentos dif\'iciles y su apoyo incondicional.}
+
+\nolistoftables
+\nolistoffigures
+\phd
+
+\copyrightyear{ 2009} \submitdate{ Jueves 30 de Abril 2009}
+
+\convocation{ Jueves 30 de Abril}{ 2009}
+
+% ------------------------------------------------------------------------
+\begin{figure}[h]
+\centering
+    \includegraphics[width=2.5cm]{logouv.eps}\\
+  \end{figure}
+
+\title{\'Indice de comovimiento entre series temporales:\\
+ Una Aplicaci\'on}
+
+\author{Juan Carlos Herrera \'Ordenes.}
+
+\supervisor{Dr. Ronny Vallejos}
+
+\firstreader{Dr. Manuel Galea}
+\secondreader{Dr. Felipe Osorio}
+%\thirdreader{}
+
+
+% ------------------------------------------------------------------------
+{
+\typeout{:?0000} % Don't bother with over/under-full boxes
+\beforepreface
+\typeout{:?1111} % Process All Errors from Here on
+}
+% ------------------------------------------------------------------------
+%\setcounter{page}{1}
+%\tableofcontents
+% ------------------------------------------------------------------------
+{ \typeout{Resumen}
+\include{resumen}
+}
+% ------------------------------------------------------------------------
+{ \typeout{Agradecimiento}
+\include{agrad}
+}
+% ------------------------------------------------------------------------
+\afterpreface
+\def\baselinestretch{1}
+\setlinespacing{1.2}
+% ------------------------------------------------------------------------
+{ \typeout{Introducci\'on}
+\include{intro}
+}
+% ------------------------------------------------------------------------
+\setlinespacing{1.2}
+% ------------------------------------------------------------------------
+
+\include{c1}
+\include{c2}
+\include{c3}
+\include{c4}
+\include{c7}
+\include{c5}
+\include{c6}
+\include{apendice}
+% ------------------------------------------------------------------------
+%GATHER{xBib.bib}   % For Gather Purpose Only
+%GATHER{Thesis.bbl} % For Gather Purpose Only
+%\setlinespacing{1.3}
+%\bibliographystyle{amsplain}
+%\bibliography{XBib}
+\end{document}
+% ------------------------------------------------------------------------
